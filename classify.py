@@ -45,9 +45,10 @@ while True:
   tensor_audio.load_from_audio_record(audio_record)
   categories = classifier.classify(tensor_audio)
   os.system('clear') # clear the terminal so we overwrite the output every time
-  print("I guess it is:" , end =" ")
+  print("I guess it is:" , end ="\n")
   if len(categories) > 1:
-    print(categories[0].score*100,"% sure it is",categories[0].label)
+    for cat_counter in range(len(categories)):
+      print("\t",categories[cat_counter].score*100,"% sure it is",categories[cat_counter].label)
   print("Listening again...")
 
 

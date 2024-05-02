@@ -15,7 +15,7 @@
 import threading
 import numpy as np
 import sounddevice as sd
-
+sd.default.device = 0
 
 class AudioRecord(object):
   """A class to record audio in a streaming basis."""
